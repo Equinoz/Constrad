@@ -1,8 +1,12 @@
 # -*- Coding:Utf-8 -*-
 
+import os
+
 from tkinter import *
 
 from constrad import translate
+
+scriptDir = os.path.dirname(os.path.abspath(__file__))
 
 class Interface(Frame):
 	""" Classe permettant la création d'une interface graphique
@@ -65,7 +69,7 @@ bg=background_color, fg="#281d1d", font="arial 16")
 		# Reverse button
 		self.frame_button_reverse = Frame(self.frame_entries, bg=background_color)
 		self.frame_button_reverse.pack(side=LEFT, fill=BOTH)
-		self.photo = PhotoImage(file="images_constrad/reverse.png")
+		self.photo = PhotoImage(file=scriptDir + "/images_constrad/reverse.png")
 		self.reverse_button = Button(self.frame_button_reverse, image=self.photo, \
 command=self.reverse_translation_way)
 		self.reverse_button.pack(side=BOTTOM, padx=25, pady=50)
